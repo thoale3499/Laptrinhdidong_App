@@ -1,4 +1,4 @@
-package com.example.foody.Adapter;
+package com.example.foody.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

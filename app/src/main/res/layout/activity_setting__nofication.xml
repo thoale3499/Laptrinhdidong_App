@@ -7,49 +7,53 @@
     android:orientation="vertical"
     android:background="#EFEFEE">
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="8"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorPrimary">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:layout_marginLeft="15sp">
-
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
             <ImageView
-                android:id="@+id/id_back"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_baseline_arrow_back"/>
-        </RelativeLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100sp"
-            android:text="Cài đặt thông báo"
-            android:textSize="21sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16sp"
-            android:textColor="#FFF"/>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="330sp"
-            android:layout_marginTop="15sp">
-
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_back"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
             <TextView
-                android:id="@+id/text_xong"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Cài đặt thông báo"
+                android:textSize="20sp"
+                android:textColor="#FFFFFFFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="Xong"
-                android:textSize="21sp"
-                android:textColor="#fff"/>
-        </RelativeLayout>
-    </RelativeLayout>
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

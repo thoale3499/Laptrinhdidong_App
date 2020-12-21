@@ -5,7 +5,6 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
-
         android:background="@color/colorRedLight"
         android:layout_width="match_parent"
         android:layout_height="50dp">

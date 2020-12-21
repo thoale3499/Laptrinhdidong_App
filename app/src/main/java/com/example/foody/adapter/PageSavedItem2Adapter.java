@@ -1,4 +1,4 @@
-package com.example.foody.Adapter;
+package com.example.foody.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

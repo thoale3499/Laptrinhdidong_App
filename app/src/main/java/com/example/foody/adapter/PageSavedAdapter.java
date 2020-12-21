@@ -13,7 +13,7 @@ import com.example.foody.view.Item4SavedFragment;
 
 public class PageSavedAdapter extends FragmentStatePagerAdapter {
     private int numOfTabs;
-    String title[]={"Tất cả","Địa điểm","Ảnh","Bài viết"};
+    String title[]= {"Tất cả","Địa điểm","Ảnh","Bài viết"};
     public PageSavedAdapter(@NonNull FragmentManager fm,int numOfTabs) {
         super(fm);
         this.numOfTabs=numOfTabs;
@@ -35,7 +35,6 @@ public class PageSavedAdapter extends FragmentStatePagerAdapter {
                 default:
                 return null;
         }
-
     }
 
     @Override

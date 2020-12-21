@@ -7,7 +7,7 @@
     android:background="#fff">
 
     <ListView
-        android:id="@+id/List_recentview"
+        android:id="@+id/List_recentview_notification"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </ListView>

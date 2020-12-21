@@ -1,66 +1,91 @@
 package com.example.foody.view;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.example.foody.DAO.Notification_DAO;
 import com.example.foody.R;
+import com.example.foody.adapter.RecentViewSearch_Notification_Adapter;
 
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link Recentview_Search_Nofication#newInstance} factory method to
+ * create an instance of this fragment.
+ */
 public class Recentview_Search_Nofication extends Fragment {
-    ListView listView;
-    String[] titles = {"Cơm Tấm Mộc - Phan Thanh","BBQ Hanatei - Buffet Nướng Nhật Bản","Hạnh - Bún Mắm & Bánh Tráng Đập","Say - Mỳ cay & Trà Sữa","Tea Rex Milk Tea & Coffee","Lẩu 1 Người", "Fmax Coffee - Trà Chanh"};
-    String[] desc = {"8 Phan Thanh, Quận Thanh Khê, Đà Nẵng", "1 - 3 Đống Đa, P.Thuận Phước, Quận Hải Châu, Đà Nẵng", "45B Châu Thượng Văn, Quận Hải Châu, Đà Nẵng","70 Dũng Sĩ Thanh Khê, Quận Thanh Khê, Đà Nẵng","353 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng","183 Bế Văn Đàn, Quận Thanh Khê, Đà Nẵng","4 Phan Thanh, Quận Thanh Khê, Đà Nẵng"};
-    String[] desc1 = {"Quán ăn","Nhà hàng","Quán ăn","Quán ăn","Ăn vặt","Quán ăn","Cafe"};
-    String[] check = {"121","292","2","37","66","518","69"};
-    String[] cmt = {"98","50","2","15","19","101","5"};
-    String[] rate = {"8.7","8.0","8.5","8.6","7.1","7.5","7.4"};
-    int[] img = {R.drawable.comtam,R.drawable.buffetnuong,R.drawable.bunmam,R.drawable.mycay,R.drawable.tearex,R.drawable.lau1nguoi,R.drawable.fmax};
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
     public Recentview_Search_Nofication() {
+        // Required empty public constructor
     }
 
-    @Nullable
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment Item1Fragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static Recentview_Search_Nofication newInstance(String param1, String param2) {
+        Recentview_Search_Nofication fragment = new Recentview_Search_Nofication();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.recentview_search_nofication,container,false);
-        listView = (ListView) view.findViewById(R.id.List_recentview);
-        listView.setAdapter(new Recentview_Adapter(getActivity(),R.layout.rowlist_recentview_nofication,titles));
-        return view;
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
-    class Recentview_Adapter extends ArrayAdapter{
-        public Recentview_Adapter (Context context, int resource, String[] objects){
-            super(context,resource,objects);
+    ListView lvSavedAll;
+    RecentViewSearch_Notification_Adapter thucAnAdapter;
+    Notification_DAO thucAnDAO;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        if(thucAnDAO==null)
+        {
+            thucAnDAO = new Notification_DAO();
         }
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            View view =((Activity)getContext()).getLayoutInflater().inflate(R.layout.rowlist_recentview_nofication,null);
-            TextView txt1 = (TextView) view.findViewById(R.id.tv1_view);
-            txt1.setText(titles[position]);
-            TextView txt2 = (TextView) view.findViewById(R.id.tv2_view);
-            txt2.setText(desc[position]);
-            TextView txt3 = (TextView) view.findViewById(R.id.tv3_view);
-            txt3.setText((desc1[position]));
-            TextView txt4 = (TextView) view.findViewById(R.id.tv4_view);
-            txt4.setText(check[position]);
-            TextView txt6 = (TextView) view.findViewById(R.id.tv6_view);
-            txt6.setText(rate[position]);
-            ImageView imgs = (ImageView) view.findViewById(R.id.anh_view);
-            imgs.setBackgroundResource(img[position]);
-            TextView txt5 = (TextView) view.findViewById(R.id.tv5_view);
-            txt5.setText(cmt[position]);
-            return view;
-        }
+        View v = inflater.inflate(R.layout.recentview_search_nofication, container, false);
+        thucAnAdapter = new com.example.foody.adapter.RecentViewSearch_Notification_Adapter(v.getContext(), R.layout.rowlist_recentview_nofication,thucAnDAO.RecentViewList());
+        lvSavedAll = v.findViewById(R.id.List_recentview_notification);
+        lvSavedAll.setAdapter(thucAnAdapter);
 
+        lvSavedAll.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println(thucAnDAO.RecentViewList().get(position).getImage());
+                AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
+                b.setTitle("Xác nhận");
+                b.setMessage("Bạn có đồng ý thoát chương trình không?");
+                AlertDialog al = b.create();
+                al.show();
+            }
+        });
+        return v;
     }
 }

@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="68dp"
         android:layout_height="68dp"
-        android:id="@+id/anh_view"
+        android:id="@+id/anh_recentview"
         />
 
     <LinearLayout
@@ -25,7 +25,7 @@
             android:textStyle="bold"
             android:layout_margin="5dp"
             android:textSize="18sp"
-            android:id="@+id/tv1_view"/>
+            android:id="@+id/tv1_recentview"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:textStyle="bold"
             android:layout_margin="5dp"
             android:textSize="14sp"
-            android:id="@+id/tv2_view"/>
+            android:id="@+id/tv2_recentview"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                 android:textColor="#252525"
                 android:textStyle="bold"
                 android:textSize="14sp"
-                android:id="@+id/tv3_view"/>
+                android:id="@+id/tv3_recentview"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 android:textSize="14sp"
                 android:layout_marginLeft="5dp"
                 android:textColor="#9B9B9B"
-                android:id="@+id/tv4_view"/>
+                android:id="@+id/tv4_recentview"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:textColor="#9B9B9B"
-                android:id="@+id/tv5_view"/>
+                android:id="@+id/tv5_recentview"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
                 android:textColor="#29772C"
                 android:layout_marginLeft="15dp"
                 android:textStyle="bold"
-                android:id="@+id/tv6_view"/>
+                android:id="@+id/tv6_recentview"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

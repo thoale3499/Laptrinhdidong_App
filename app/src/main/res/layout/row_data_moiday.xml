@@ -10,6 +10,7 @@
         android:id="@+id/img_item_moiday"
         android:layout_width="match_parent"
         android:layout_height="130dp"
+        android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:src="@drawable/comvanphong"
         app:riv_corner_radius="4dp"/>
@@ -30,5 +31,4 @@
         android:lines="2"
         android:textColor="#000"
         android:textSize="10dp"/>
-
 </LinearLayout>

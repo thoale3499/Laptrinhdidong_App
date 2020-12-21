@@ -11,10 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.example.foody.Adapter.PageSavedItem2Adapter;
+import com.example.foody.adapter.PageSavedItem2Adapter;
 import com.example.foody.DAO.ThucAnDAO;
 import com.example.foody.R;
-import com.example.foody.Adapter.ThucAnAdapter;
+import com.example.foody.adapter.ThucAnAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 /**

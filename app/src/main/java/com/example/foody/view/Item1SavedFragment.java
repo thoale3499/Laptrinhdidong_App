@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import com.example.foody.Adapter.ThucAnAdapter;
+import com.example.foody.adapter.ThucAnAdapter;
 import com.example.foody.DAO.ThucAnDAO;
 import com.example.foody.R;
 
@@ -71,7 +71,7 @@ public class Item1SavedFragment extends Fragment {
             thucAnDAO = new ThucAnDAO();
         }
         View v = inflater.inflate(R.layout.fragment_item1_saved, container, false);
-        thucAnAdapter = new com.example.foody.Adapter.ThucAnAdapter(v.getContext(),R.layout.activity_dong_thuc_an,thucAnDAO.findAll());
+        thucAnAdapter = new com.example.foody.adapter.ThucAnAdapter(v.getContext(),R.layout.activity_dong_thuc_an,thucAnDAO.findAll());
         lvSavedAll = v.findViewById(R.id.lvSaved);
         lvSavedAll.setAdapter(thucAnAdapter);
 

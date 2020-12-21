@@ -9,4 +9,7 @@
     <color name="colorBlack">#000a12</color>
     <color name="colorPrimary">#ED1C24</color>
     <color name="colorGray">#ccc</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
 </resources>
