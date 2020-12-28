@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatNhieu_Datcho_Adapter extends BaseAdapter {
+public class DatNhieu_Datcho_Adapter extends BaseAdapter  {
     private Context context;
     private  int layout;
     private List<DatNhieu_Datcho_Model> datnhieuList;

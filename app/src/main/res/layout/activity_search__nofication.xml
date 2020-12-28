@@ -48,7 +48,7 @@
                         android:lines="1"
                         android:drawableLeft="@drawable/ic_baseline_search_24"
                         android:drawablePadding="7sp"
-                        android:hint="Tìm địa điểm, món ăn, địa chỉ..."/>
+                        android:hint="Tìm địa điểm, món ăn..."/>
                 </RelativeLayout>
 
             </LinearLayout>

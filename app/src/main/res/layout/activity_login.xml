@@ -94,6 +94,7 @@
                     android:layout_marginLeft="20dp"
                     android:src="@drawable/google"/>
                 <TextView
+                    android:id="@+id/tv_google"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
@@ -173,6 +174,7 @@
                     android:layout_height="45dp"
                     android:layout_marginLeft="5dp"
                     android:hint="Mật khẩu"
+                    android:inputType="textPassword"
                     android:padding="5dp"/>
             </LinearLayout>
             <LinearLayout
